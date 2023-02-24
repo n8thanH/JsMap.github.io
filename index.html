@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Mapping</title>
+
+    <style>
+        /*#79ADDC*/
+        /*#07004D*/
+        /*#FFFCF9*/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #79ADDC;
+        }
+
+        #theFather {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            font-size: 3vw;
+            padding: 3vw;
+            background-color: #07004D;
+            color: white;
+            width: 100%;
+        }
+
+        #pageContent {
+            padding: 5vw;
+            width: 100%;
+        }
+
+        #arrayPanel {
+            padding: 5vw;
+            background-color: #07004D;
+            color: white;
+        }
+
+        button {
+            padding: 1vw;
+            font-size: 1vw;
+            background-color: #2b00ff;
+            color: white;
+            border-radius: 10px;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="theFather">
+        <header>Mapping</header>
+        <div id="pageContent">
+            <div id="arrayPanel">
+                <div id="array1"></div>
+                <button id="b1">Convert to Uppercase</button><br>
+                <div id="array2"></div>
+                <button id="b2">Convert to Lowercase</button><br>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const array1Div = document.getElementById('array1');
+        const array2Div = document.getElementById('array2');
+        const button1 = document.getElementById('b1');
+        const button2 = document.getElementById('b2');
+
+        let arr1 = ['hello', 'world', 'this', 'is', 'an', 'array'];
+        let arr2 = ['Hello', 'World', 'This', 'Is', 'An', 'Array'];
+
+        function displayThings() {
+            /*const node1 = document.createTextNode(`${arr1}`);
+            const node2 = document.createTextNode(`${arr1}`);
+            array1Div.append(node1);
+            array2Div.append(node2);*/
+            array1Div.innerText = `${arr1}`;
+            array2Div.innerText = `${arr2}`;
+        }
+
+        button1.addEventListener('click', () => {
+            let newarr = arr1.map(x => x.toUpperCase());
+            array1Div.innerText = newarr;
+        });
+
+        button2.addEventListener('click', () => {
+            let newarr = arr2.map(x => x.toLowerCase());
+            array2Div.innerText = newarr;
+        });
+
+
+
+        displayThings();
+
+    </script>
+</body>
+
+</html>
